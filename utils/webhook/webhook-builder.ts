@@ -1,22 +1,29 @@
-import { WebhookBody } from "../../types/webhook-types";
+import { DeliveryWebhook } from "../../types/delivery/webhook-types";
 import { v4 as uuidv4 } from 'uuid';
 
 /**
- * Builds a valid `WebhookBody` object representing a payout event.
+ * Builds a sample delivery webhook payload for testing purposes.
  *
- * This function returns a complete `WebhookBody` structure with default values,
- * which can be partially overridden by providing a `Partial<WebhookBody>` object.
+ * This function returns a complete `DeliveryWebhook` object with default values.
+ * You can override any of the fields by passing a partial object to the `overrides` parameter.
  *
- * Useful for testing and mocking webhook events in end-to-end or integration tests.
- *
- * @param overrides - Optional partial object to override specific fields in the default payload.
- * @returns A fully constructed `WebhookBody` object with applied overrides.
+ * @param {Partial<DeliveryWebhook>} [overrides={}] - An optional object to override any of the default webhook fields.
+ * @returns {DeliveryWebhook} A fully populated delivery webhook payload object, merged with any provided overrides.
  *
  * @example
- * const payout = buildDeliveryWebhook({ status: "paid", leaveAtTheDoor: false });
- * expect(payout.status).toBe("paid");
+ * // Get default payload
+ * const payload = buildDeliveryWebhook();
+ *
+ * @example
+ * // Override status and client phone number
+ * const payload = buildDeliveryWebhook({
+ *   status: "delivered",
+ *   clientInfo: {
+ *     phone: "+61 411 222 333"
+ *   }
+ * });
  */
-export const buildDeliveryWebhook = (overrides: Partial<WebhookBody> = {}): WebhookBody => {
+export const buildDeliveryWebhook = (overrides: Partial<DeliveryWebhook> = {}): DeliveryWebhook => {
   return {
   orderId: uuidv4(),
   status: "delivering",

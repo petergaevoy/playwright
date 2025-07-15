@@ -13,7 +13,7 @@ export interface ClientInfo {
     phone: string;
 }
 
-export interface WebhookBody {
+export interface DeliveryWebhook {
   orderId: string;
   status: string;
   paid: boolean;

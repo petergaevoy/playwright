@@ -23,7 +23,7 @@ const webhooks: WebhookData[] = [];
  *
  * Webhooks are collected from the internal shared storage `webhooks`, which is populated when POST requests are received at `/webhook`.
  *
- * Useful for verifying sequential status changes (e.g., payment lifecycle) in e2e tests.
+ * Useful for verifying sequential status changes (e.g., delivery lifecycle) in e2e tests.
  *
  * Example:
  * ```ts
@@ -86,7 +86,7 @@ export async function waitForWebhookStatuses(
  * ```ts
  * const { url, getWebhooks, waitForWebhookStatuses } = await startServer();
  *
- * // Pass the `url` as webhookUrl when creating a payment
+ * // Pass the `url` as webhookUrl when creating a new delivery
  * await createDelivery({ webhookUrl: url });
  *
  * const hooks = await waitForWebhookStatuses(["created", "cooking", "delivering", "delivered"], 5);
