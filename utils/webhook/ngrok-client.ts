@@ -110,8 +110,16 @@ export async function startServer() {
     console.log(`Server listening on port ${port}`);
   });
 
-  const url = await ngrok.connect(port);
-  console.log(`ngrok tunnel opened at: ${url}`);
+  let url: string;
+
+  if (process.env.CI === "true") {
+    url = `http://127.0.0.1:${port}`;
+    console.log("Running in CI - ngrok tunnel disabled");
+  } else {
+    url = await ngrok.connect(port);
+    console.log(`ngrok tunnel opened at: ${url}`);
+  }
+
 
   return {
     server,
