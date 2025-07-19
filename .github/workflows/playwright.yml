@@ -20,6 +20,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Authenticate ngrok
+        run: npx ngrok config add-authtoken ${{ secrets.NGROK_AUTH_TOKEN }}
+
       - name: Install Playwright Chromium only
         run: npx playwright install --with-deps chromium
 
