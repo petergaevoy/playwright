@@ -11,7 +11,7 @@ Hey! 👋 This is my playground where I share some of my solutions for **end-to-
 You can dig a bit deeper into some of these ideas here:  
 👉 [petergaevoy.com](https://petergaevoy.com)
 
-📜 [How to deal with 429 in your tests 🧭](https://petergaevoy.com/posts/how-to-deal-with-429/)
+- [How to deal with 429 in your tests 🧭](https://petergaevoy.com/posts/how-to-deal-with-429/)
 
 ---
 
