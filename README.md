@@ -12,7 +12,8 @@ You can dig a bit deeper into some of these ideas here:
 👉 [petergaevoy.com](https://petergaevoy.com)
 
 - [How to deal with 429 in your tests 🧭](https://petergaevoy.com/posts/how-to-deal-with-429/)
-
+- [How to e2e test webhooks 📬](https://petergaevoy.com/posts/How-to-e2e-test-webhooks/)
+  
 ---
 
 Feel free to poke around, borrow ideas, and drop them into your own project.  
